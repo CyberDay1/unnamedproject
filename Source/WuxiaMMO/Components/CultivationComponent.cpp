@@ -1,4 +1,5 @@
 #include "Components/CultivationComponent.h"
+#include "Components/SpatialRingComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Math/UnrealMathUtility.h"
 
@@ -23,6 +24,7 @@ void UCultivationComponent::RecomputeRequirement()
 
     // If at SubLevel 9 and already full, block additional Qi until breakthrough
     Progress.bQiGainBlockedAtCap = (Progress.SubLevel == 9) && (Progress.CurrentQi >= Progress.RequiredQi);
+    UpdateSpatialRingSlots();
 }
 
 void UCultivationComponent::AddQiFlat(float Amount)
@@ -77,6 +79,7 @@ bool UCultivationComponent::TryBreakthrough(bool bHasStageCatalystItem)
         Progress.CurrentQi = 0.0f;
         Progress.bQiGainBlockedAtCap = false;
         RecomputeRequirement();
+        UpdateSpatialRingSlots();
         return true;
     }
 
@@ -91,7 +94,22 @@ bool UCultivationComponent::TryBreakthrough(bool bHasStageCatalystItem)
     Progress.CurrentQi = 0.0f;
     Progress.bQiGainBlockedAtCap = false;
     RecomputeRequirement();
+    UpdateSpatialRingSlots();
 
     OnBreakthrough.Broadcast(Progress.Stage, Progress.SubLevel);
     return true;
+}
+
+void UCultivationComponent::SetSpatialRing(USpatialRingComponent* InSpatialRing)
+{
+    SpatialRing = InSpatialRing;
+    UpdateSpatialRingSlots();
+}
+
+void UCultivationComponent::UpdateSpatialRingSlots() const
+{
+    if (SpatialRing.IsValid())
+    {
+        SpatialRing->UpdateSlotCount(Progress.SubLevel);
+    }
 }
