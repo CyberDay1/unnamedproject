@@ -7,6 +7,9 @@
 #include "WuxiaCharacterBase.generated.h"
 
 class UCharacterInitializerComponent;
+class UDialogueComponent;
+class UReputationComponent;
+class UQuestComponent;
 
 UCLASS()
 class AWuxiaCharacterBase : public ACharacter
@@ -21,6 +24,15 @@ public:
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
     class UCharacterInitializerComponent* Initializer;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
+    UDialogueComponent* Dialogue;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
+    UReputationComponent* Reputation;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
+    UQuestComponent* Quest;
 
 protected:
     virtual void BeginPlay() override;
