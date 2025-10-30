@@ -1,0 +1,11 @@
+ClassType,ClassName,BaseHPModifier,BaseQiModifier,PrimaryStats,SecondaryStats,StartingAbilities,WeaponType,Description
+SwordCultivator,Sword Cultivator,1.0,1.0,"Agility,Vitality,Willpower","Wisdom,Constitution","QiSlash,BladeAura","Sword","Masters of blade and spiritual resonance."
+ShadowDisciple,Shadow Disciple,0.8,1.1,"Agility,Luck,Willpower","Spirit,Constitution","ShadowStep,Backstab","Daggers","Stealth assassins who manipulate lightness arts."
+TalismanSage,Talisman Sage,0.9,1.2,"Wisdom,Spirit,Vitality","Willpower,Agility","HealCharm,PurifySeal","Talisman","Healers channeling Qi through charms."
+FivePhaseAdept,Five-Phase Adept,0.7,1.4,"Wisdom,Spirit,Constitution","Willpower,Vitality","ElementBurst,QiFlow","Focus","Masters of the five elemental phases."
+IronBodyMonk,Iron Body Monk,1.3,0.8,"Vitality,Constitution,Willpower","Agility,Spirit","IronPalm,StoneGuard","Staff","Monks who refine the body into a vessel of Qi."
+SpearSaint,Spear Saint,1.1,0.9,"Agility,Vitality","Willpower,Constitution","SpearSweep,QiDeflect","Spear","Warriors of long reach and precision."
+SoundWeaver,Sound Weaver,0.8,1.2,"Wisdom,Spirit","Willpower,Luck","HarmonyField,ResonantStrike","Instrument","Manipulate Qi through sound and vibration."
+PillMaster,Pill Master,0.9,1.3,"Wisdom,Constitution","Spirit,Willpower","ElixirBurst,HealingMist","Cauldron","Masters of alchemy and explosive mixtures."
+BeastCultivator,Beast Cultivator,1.0,1.0,"Spirit,Willpower","Constitution,Agility","SummonSpiritBeast,QiBond","Seal","Summoners who bond with spirit beasts."
+ArraySage,Array Sage,0.9,1.1,"Wisdom,Willpower","Constitution,Spirit","ArraySeal,BarrierCircle","Brush","Experts of spiritual arrays and sigil formations."
