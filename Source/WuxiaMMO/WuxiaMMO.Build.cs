@@ -11,7 +11,9 @@ public class WuxiaMMO : ModuleRules
             new string[]
             {
                 "Core", "CoreUObject", "Engine", "InputCore",
-                "EnhancedInput", "GameplayAbilities", "GameplayTags", "GameplayTasks"
+                "EnhancedInput",
+                "GameplayAbilities", "GameplayTags", "GameplayTasks",
+                "HTTP", "Json", "JsonUtilities"
             });
 
         PublicIncludePaths.AddRange(

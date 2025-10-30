@@ -2,7 +2,7 @@
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "Engine/DataTable.h"
-#include "FDialogueNode.h"
+#include "Data/Dialogue/FDialogueNode.h"
 #include "DialogueSubsystem.generated.h"
 
 UCLASS()
