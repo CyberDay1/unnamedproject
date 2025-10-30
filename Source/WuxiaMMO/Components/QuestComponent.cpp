@@ -8,6 +8,23 @@
 #include "Characters/ECultivationStage.h"
 #include "GameFramework/Actor.h"
 #include "Kismet/GameplayStatics.h"
+#include "Systems/ActionSaveRouterComponent.h"
+
+static void SaveTriggerFromOwner(UActorComponent* Component, const TCHAR* Reason)
+{
+    if (!Component)
+    {
+        return;
+    }
+
+    if (AActor* Owner = Component->GetOwner())
+    {
+        if (UActionSaveRouterComponent* Router = Owner->FindComponentByClass<UActionSaveRouterComponent>())
+        {
+            Router->TriggerSave(Reason);
+        }
+    }
+}
 
 UQuestComponent::UQuestComponent()
 {
@@ -26,6 +43,7 @@ bool UQuestComponent::AcceptQuest(const FQuestDefinition& Def)
     NewState.bAccepted = true;
     ActiveQuests.Add(NewState);
     OnQuestUpdated.Broadcast(Def.QuestUUID);
+    SaveTriggerFromOwner(this, TEXT("Quest:Accept"));
     return true;
 }
 
@@ -44,7 +62,11 @@ bool UQuestComponent::TryAdvanceObjective(FQuestState& State, const TFunction<bo
             bAnyUpdated = true;
         }
     }
-    if (bAnyUpdated) OnQuestUpdated.Broadcast(State.QuestUUID);
+    if (bAnyUpdated)
+    {
+        OnQuestUpdated.Broadcast(State.QuestUUID);
+        SaveTriggerFromOwner(this, TEXT("Quest:Update"));
+    }
     return bAnyUpdated;
 }
 
@@ -153,6 +175,7 @@ bool UQuestComponent::TurnInQuest(const FString& QuestUUID, const FQuestDefiniti
                 GrantRewards(GetOwner(), Def);
                 S.bTurnedIn = true;
                 OnQuestCompleted.Broadcast(QuestUUID);
+                SaveTriggerFromOwner(this, TEXT("Quest:Complete"));
                 return true;
             }
             // For NPC turn-in, UI/interaction should call this again with bInstant=true

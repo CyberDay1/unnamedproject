@@ -1,6 +1,24 @@
 #include "Components/CurrencyComponent.h"
 #include "Components/CultivationComponent.h"
 #include "Components/ReputationComponent.h"
+#include "GameFramework/Actor.h"
+#include "Systems/ActionSaveRouterComponent.h"
+
+static void SaveTriggerFromOwner(UActorComponent* Component, const TCHAR* Reason)
+{
+    if (!Component)
+    {
+        return;
+    }
+
+    if (AActor* Owner = Component->GetOwner())
+    {
+        if (UActionSaveRouterComponent* Router = Owner->FindComponentByClass<UActionSaveRouterComponent>())
+        {
+            Router->TriggerSave(Reason);
+        }
+    }
+}
 
 UCurrencyComponent::UCurrencyComponent()
 {
@@ -49,6 +67,7 @@ void UCurrencyComponent::Add(ECurrencyType Type, int64 Amount)
 {
     int64& Bal = Balances.FindOrAdd(Type);
     Bal = FMath::Max<int64>(0, Bal + Amount);
+    SaveTriggerFromOwner(this, TEXT("Currency:Add"));
 }
 
 bool UCurrencyComponent::Remove(ECurrencyType Type, int64 Amount)
@@ -60,6 +79,7 @@ bool UCurrencyComponent::Remove(ECurrencyType Type, int64 Amount)
     }
 
     *Bal -= Amount;
+    SaveTriggerFromOwner(this, TEXT("Currency:Remove"));
     return true;
 }
 
@@ -210,6 +230,7 @@ bool UCurrencyComponent::ConsumeStoneForQi(ECurrencyType StoneType, UCultivation
 
     *Balance -= 1;
     OutQiGained = Unit->BaseQiGrant * Effectiveness;
+    SaveTriggerFromOwner(this, TEXT("Currency:ConsumeStone"));
     return true;
 }
 

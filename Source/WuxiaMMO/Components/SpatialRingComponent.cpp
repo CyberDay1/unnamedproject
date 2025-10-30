@@ -1,4 +1,22 @@
 #include "Components/SpatialRingComponent.h"
+#include "GameFramework/Actor.h"
+#include "Systems/ActionSaveRouterComponent.h"
+
+static void SaveTriggerFromOwner(UActorComponent* Component, const TCHAR* Reason)
+{
+    if (!Component)
+    {
+        return;
+    }
+
+    if (AActor* Owner = Component->GetOwner())
+    {
+        if (UActionSaveRouterComponent* Router = Owner->FindComponentByClass<UActionSaveRouterComponent>())
+        {
+            Router->TriggerSave(Reason);
+        }
+    }
+}
 
 USpatialRingComponent::USpatialRingComponent()
 {
@@ -15,12 +33,16 @@ void USpatialRingComponent::UpdateSlotCount(int32 SubLevel)
 bool USpatialRingComponent::AddItem(const FItemInstance& Item)
 {
     if (MergeStackableItem(Item))
+    {
+        SaveTriggerFromOwner(this, TEXT("InventoryChange:AddStack"));
         return true;
+    }
 
     if (StoredItems.Num() >= CurrentMaxSlots)
         return false;
 
     StoredItems.Add(Item);
+    SaveTriggerFromOwner(this, TEXT("InventoryChange:AddSlot"));
     return true;
 }
 
@@ -54,6 +76,7 @@ bool USpatialRingComponent::RemoveItemByID(const FGuid& InstanceID, int32 Quanti
                 StoredItems.RemoveAt(i);
             else
                 StoredItems[i].Quantity -= Quantity;
+            SaveTriggerFromOwner(this, TEXT("InventoryChange:Remove"));
             return true;
         }
     }
