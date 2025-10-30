@@ -2,7 +2,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Data/FCharacterIdentity.h"
+#include "Data/FCharacterStats.h"
 #include "WuxiaCharacterBase.generated.h"
+
+class UCharacterInitializerComponent;
 
 UCLASS()
 class AWuxiaCharacterBase : public ACharacter
@@ -11,6 +15,12 @@ class AWuxiaCharacterBase : public ACharacter
 
 public:
     AWuxiaCharacterBase();
+
+    UFUNCTION(BlueprintCallable, Category="Character")
+    void InitializeFromData(const FCharacterIdentity& Identity, const FCharacterStats& Stats);
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
+    class UCharacterInitializerComponent* Initializer;
 
 protected:
     virtual void BeginPlay() override;
@@ -30,4 +40,11 @@ public:
 
     void MoveForward(float Value);
     void MoveRight(float Value);
+
+private:
+    UPROPERTY()
+    FCharacterIdentity CharacterIdentity;
+
+    UPROPERTY()
+    FCharacterStats CharacterStats;
 };
