@@ -3,6 +3,8 @@
 #include "Components/ReputationComponent.h"
 #include "Components/SpatialRingComponent.h"
 #include "Components/CultivationComponent.h"
+#include "GameFramework/Actor.h"
+#include "Systems/ActionSaveRouterComponent.h"
 #include "Items/ItemInstance.h"
 #include "HAL/PlatformTime.h"
 
@@ -134,5 +136,14 @@ bool UVendorSubsystem::Purchase(const FString& CharacterID, const FVendorItemDef
 
     StampPurchase(VendorSectID.ToString(), CharacterID, Def);
     OutError.Reset();
+
+    if (AActor* Owner = Ring->GetOwner())
+    {
+        if (UActionSaveRouterComponent* Router = Owner->FindComponentByClass<UActionSaveRouterComponent>())
+        {
+            Router->TriggerSave(TEXT("Vendor:Purchase"));
+        }
+    }
+
     return true;
 }
