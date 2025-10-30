@@ -1,0 +1,22 @@
+[
+  {
+    "fileName": "main-overview.mdc",
+    "description": "Complete system overview detailing the core game architecture, component interactions, and high-level system relationships between cultivation, alchemy, skills, and inventory systems"
+  },
+  {
+    "fileName": "data-models-and-relationships.mdc",
+    "description": "Comprehensive documentation of all data structures including FCultivationProgress, FCharacterStats, FClassDefinition, FItemDefinition, FSkillDefinition, and their relationships and inheritance hierarchies"
+  },
+  {
+    "fileName": "cultivation-system-algorithms.mdc",
+    "description": "Detailed documentation of cultivation mechanics, including Qi calculation algorithms, progression formulas, stage advancement logic, and resource management systems from CultivationComponent"
+  },
+  {
+    "fileName": "alchemy-crafting-algorithms.mdc",
+    "description": "Documentation of alchemy system algorithms including success chance calculations, quality multipliers, ingredient combinations, and cauldron durability mechanics from AlchemySubsystem"
+  },
+  {
+    "fileName": "character-skill-system.mdc",
+    "description": "Detailed documentation of the skill system including damage calculations, cooldown management, experience gain formulas, and class balance implementation from SkillComponent"
+  }
+]
