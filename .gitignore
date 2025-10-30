@@ -1,0 +1,81 @@
+# Unreal Engine
+# This .gitignore file should be placed at the root of your Unreal Engine project directory
+
+# Compiled source files
+*.exe
+*.exe.config
+*.dll
+*.dylib
+*.so
+*.lib
+*.app
+*.ipa
+*.pdb
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Static Libraries
+*.a
+
+# Build directories
+/Binaries/
+/Build/
+/DerivedDataCache/
+/Intermediate/
+/Saved/
+/Plugins/*/Binaries/
+/Plugins/*/Intermediate/
+
+# Ignore source control metadata
+*.suo
+*.sdf
+*.sln
+*.sln.docstates
+*.user
+*.userprefs
+*.user
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# Folders to ignore
+.vs/
+.vscode/
+.idea/
+
+# Mac Files
+*.DS_Store
+.DS_Store?
+
+# Android/IOS
+*.apk
+*.ipa
+
+# Backup & Autosave Files
+*_Backup.*
+*Autosave*.*
+
+# Logs
+*.log
+*.ldf
+*.sql
+*.orig
+
+# Crash dumps
+*.dmp
+
+# Generated config
+Config/DefaultEditor.ini
+Config/DefaultEditorSettings.ini
+Config/DefaultEngine.ini.bak
+Config/DefaultGame.ini.bak
+Config/DefaultInput.ini.bak
+Config/DefaultGameUserSettings.ini
+Config/DefaultScalability.ini
+
+# Other
+*.sublime-project
+*.sublime-workspace
+

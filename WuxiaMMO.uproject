@@ -1,0 +1,18 @@
+{
+    "FileVersion": 3,
+    "EngineAssociation": "5.6.1",
+    "Category": "Games",
+    "Description": "Wuxia MMORPG base project",
+    "Modules": [
+        {
+            "Name": "WuxiaMMO",
+            "Type": "Runtime",
+            "LoadingPhase": "Default"
+        }
+    ],
+    "TargetPlatforms": [
+        "Windows",
+        "Mac",
+        "Linux"
+    ]
+}
