@@ -1,4 +1,7 @@
 #pragma once
+
+#include "CoreMinimal.h"
+#include "EClassAndElementEnums.h"
 #include "CoreMinimal.h"
 #include "EClassAndElementEnums.h"
 #include "ECultivationStage.h"
@@ -9,6 +12,20 @@ struct FCharacterIdentity
 {
     GENERATED_BODY()
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Config, Category="Character")
+    FString CharacterID;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Config, Category="Character")
+    FString CharacterName;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Config, Category="Character")
+    EClassType ClassType = EClassType::None;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Config, Category="Character")
+    EElementType ElementAffinity = EElementType::None;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Config, Category="Character")
+    int32 Level = 1;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Identity")
     FString CharacterID; // Server-generated UUID
 

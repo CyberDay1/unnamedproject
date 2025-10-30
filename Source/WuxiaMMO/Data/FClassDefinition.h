@@ -1,4 +1,8 @@
 #pragma once
+
+#include "CoreMinimal.h"
+#include "Engine/DataTable.h"
+#include "GameplayTagContainer.h"
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
 #include "EClassAndElementEnums.h"
@@ -9,6 +13,14 @@ struct FClassDefinition : public FTableRowBase
 {
     GENERATED_BODY()
 
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Class")
+    FString ClassName;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Class")
+    TArray<FGameplayTag> StartingAbilityTags;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Class")
+    EClassType ClassType = EClassType::None;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Class")
     EClassType ClassType = EClassType::None;
 
