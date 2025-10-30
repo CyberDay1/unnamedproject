@@ -4,6 +4,7 @@
 #include "Components/DialogueComponent.h"
 #include "Components/ReputationComponent.h"
 #include "Components/QuestComponent.h"
+#include "Systems/ActionSaveRouterComponent.h"
 
 AWuxiaCharacterBase::AWuxiaCharacterBase()
 {
@@ -12,6 +13,7 @@ AWuxiaCharacterBase::AWuxiaCharacterBase()
     Dialogue = CreateDefaultSubobject<UDialogueComponent>(TEXT("DialogueComponent"));
     Reputation = CreateDefaultSubobject<UReputationComponent>(TEXT("ReputationComponent"));
     Quest = CreateDefaultSubobject<UQuestComponent>(TEXT("QuestComponent"));
+    PersistenceRouter = CreateDefaultSubobject<UActionSaveRouterComponent>(TEXT("PersistenceRouter"));
 }
 
 void AWuxiaCharacterBase::BeginPlay()
@@ -41,6 +43,11 @@ void AWuxiaCharacterBase::InitializeFromData(const FCharacterIdentity& Identity,
     if (Initializer)
     {
         Initializer->InitializeCharacter(Identity, Stats);
+    }
+
+    if (PersistenceRouter)
+    {
+        PersistenceRouter->CharacterID = Identity.CharacterID;
     }
 }
 

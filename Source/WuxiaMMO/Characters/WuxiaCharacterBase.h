@@ -10,6 +10,7 @@ class UCharacterInitializerComponent;
 class UDialogueComponent;
 class UReputationComponent;
 class UQuestComponent;
+class UActionSaveRouterComponent;
 
 UCLASS()
 class AWuxiaCharacterBase : public ACharacter
@@ -33,6 +34,9 @@ public:
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
     UQuestComponent* Quest;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Components")
+    UActionSaveRouterComponent* PersistenceRouter;
 
 protected:
     virtual void BeginPlay() override;
