@@ -19,6 +19,9 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Cultivation|State")
     FCultivationProgress Progress;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Cultivation|Inventory")
+    TWeakObjectPtr<class USpatialRingComponent> SpatialRing;
+
     // Tuning constants for Qi requirement curve
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Cultivation|Config")
     float BaseQi = 100.0f;
@@ -61,6 +64,9 @@ public:
     UFUNCTION(BlueprintCallable, Category="Cultivation")
     bool TryBreakthrough(bool bHasStageCatalystItem);
 
+    UFUNCTION(BlueprintCallable, Category="Cultivation|Inventory")
+    void SetSpatialRing(USpatialRingComponent* InSpatialRing);
+
     // Event
     UPROPERTY(BlueprintAssignable)
     FOnBreakthrough OnBreakthrough;
@@ -71,4 +77,5 @@ public:
 
 private:
     float StageIndex(ECultivationStage S) const; // returns 0,1,2,... for curve
+    void UpdateSpatialRingSlots() const;
 };
