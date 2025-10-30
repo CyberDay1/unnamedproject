@@ -1,0 +1,87 @@
+{
+    "Rows": {
+        "Quest_TutorialCull": {
+            "QuestUUID": "0f3a1ac2-2c5e-4f31-93f6-4a68dbd05d9a",
+            "Title": "Cull the Forest Wolves",
+            "Description": "Wolves have been threatening the sect's herb gatherers. Cull a small pack to keep the paths safe.",
+            "AcceptanceType": "Auto",
+            "TurnInType": "Instant",
+            "IssuerNPC": "SectMaster",
+            "TurnInNPC": "SectMaster",
+            "Objectives": [
+                {
+                    "Type": "Kill",
+                    "TargetID": "Wolf",
+                    "RequiredCount": 5,
+                    "LocationTag": "",
+                    "DeliverToNPC": "",
+                    "CurrentCount": 0,
+                    "bCompleted": false
+                }
+            ],
+            "Rewards": [
+                {
+                    "Type": "Qi",
+                    "Amount": 50.0,
+                    "SkillName": "",
+                    "ItemID": "",
+                    "Quantity": 0
+                },
+                {
+                    "Type": "SkillXP",
+                    "Amount": 25.0,
+                    "SkillName": "",
+                    "ItemID": "",
+                    "Quantity": 0
+                }
+            ],
+            "bIsSectOrCoreQuest": true
+        },
+        "Quest_HerbalRemedy": {
+            "QuestUUID": "58c37d2d-5b7e-42f7-8b55-2e2198d20a8c",
+            "Title": "Herbal Remedy",
+            "Description": "Gather mountain ginseng for Elder Wei and deliver it to the infirmary.",
+            "AcceptanceType": "NPCDialogue",
+            "TurnInType": "NPC",
+            "IssuerNPC": "ElderWei",
+            "TurnInNPC": "InfirmaryHealer",
+            "Objectives": [
+                {
+                    "Type": "Collect",
+                    "TargetID": "MountainGinseng",
+                    "RequiredCount": 3,
+                    "LocationTag": "",
+                    "DeliverToNPC": "",
+                    "CurrentCount": 0,
+                    "bCompleted": false
+                },
+                {
+                    "Type": "Deliver",
+                    "TargetID": "MountainGinseng",
+                    "RequiredCount": 3,
+                    "LocationTag": "",
+                    "DeliverToNPC": "InfirmaryHealer",
+                    "CurrentCount": 0,
+                    "bCompleted": false
+                }
+            ],
+            "Rewards": [
+                {
+                    "Type": "Item",
+                    "Amount": 0.0,
+                    "SkillName": "",
+                    "ItemID": "QiRecoveryPotion",
+                    "Quantity": 2
+                },
+                {
+                    "Type": "LifeSkillXP",
+                    "Amount": 15.0,
+                    "SkillName": "Herbalism",
+                    "ItemID": "",
+                    "Quantity": 0
+                }
+            ],
+            "bIsSectOrCoreQuest": false
+        }
+    }
+}
