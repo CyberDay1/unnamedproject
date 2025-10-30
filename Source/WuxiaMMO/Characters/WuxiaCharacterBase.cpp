@@ -1,11 +1,17 @@
 #include "Characters/WuxiaCharacterBase.h"
 
 #include "Characters/CharacterInitializerComponent.h"
+#include "Components/DialogueComponent.h"
+#include "Components/ReputationComponent.h"
+#include "Components/QuestComponent.h"
 
 AWuxiaCharacterBase::AWuxiaCharacterBase()
 {
     PrimaryActorTick.bCanEverTick = true;
     Initializer = CreateDefaultSubobject<UCharacterInitializerComponent>(TEXT("Initializer"));
+    Dialogue = CreateDefaultSubobject<UDialogueComponent>(TEXT("DialogueComponent"));
+    Reputation = CreateDefaultSubobject<UReputationComponent>(TEXT("ReputationComponent"));
+    Quest = CreateDefaultSubobject<UQuestComponent>(TEXT("QuestComponent"));
 }
 
 void AWuxiaCharacterBase::BeginPlay()
