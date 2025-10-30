@@ -1,6 +1,6 @@
 #include "Components/NPCInteractionComponent.h"
 #include "Components/DialogueComponent.h"
-#include "FDialogueNode.h"
+#include "Data/Dialogue/FDialogueNode.h"
 
 bool UNPCInteractionComponent::BeginDialogue(AActor* PlayerActor)
 {

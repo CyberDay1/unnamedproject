@@ -1,7 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "FDialogueNode.h"
+#include "Data/Dialogue/FDialogueNode.h"
+#include "Data/Dialogue/FDialogueResponse.h"
 #include "DialogueComponent.generated.h"
 
 class UDialogueSubsystem;
