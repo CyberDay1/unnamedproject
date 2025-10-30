@@ -1,0 +1,16 @@
+{
+    "Vendors": [
+        {
+            "VendorUUID": "1c2fa5b2-2f49-4a38-92a9-4fa4569712c4",
+            "NPCBlueprint": "/Game/Blueprints/NPCs/BP_SectProvisioner",
+            "DialogueOption": "OpenShop",
+            "VendorInventoryTable": "/Game/Data/Vendors/DT_SectProvisioner"
+        },
+        {
+            "VendorUUID": "5a7f0301-80d7-4b77-af4f-156e8f0a6d9b",
+            "NPCBlueprint": "/Game/Blueprints/NPCs/BP_RovingMerchant",
+            "InteractionTag": "Interact_OpenVendor",
+            "VendorInventoryTable": "/Game/Data/Vendors/DT_RovingMerchant"
+        }
+    ]
+}
