@@ -1,3 +1,4 @@
+using System.IO;
 using UnrealBuildTool;
 
 public class WuxiaMMO : ModuleRules
@@ -11,6 +12,14 @@ public class WuxiaMMO : ModuleRules
             {
                 "Core", "CoreUObject", "Engine", "InputCore",
                 "EnhancedInput", "GameplayAbilities", "GameplayTags", "GameplayTasks"
+            });
+
+        PublicIncludePaths.AddRange(
+            new string[]
+            {
+                Path.Combine(ModuleDirectory, "Components"),
+                Path.Combine(ModuleDirectory, "Data"),
+                Path.Combine(ModuleDirectory, "Systems")
             });
 
         PrivateDependencyModuleNames.AddRange(new string[] { });
