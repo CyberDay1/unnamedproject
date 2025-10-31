@@ -2,7 +2,9 @@
 
 #include "Buffs/BuffComponent.h"
 #include "Components/ComboComponent.h"
+#include "Combat/DamageResolverSubsystem.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Engine/World.h"
 
 USkillComponent::USkillComponent()
 {
@@ -76,11 +78,6 @@ bool USkillComponent::UseSkill(FName SkillID, float CurrentQi, float& OutQiCost,
 
     OutDamage = CalculateDamage(Skill.Definition, ClassData, Stats);
 
-    if (BuffComponent)
-    {
-        OutDamage *= BuffComponent->GetDamageMultiplier();
-    }
-
     ApplyCooldown(Skill);
 
     if (AActor* OwnerActor = GetOwner())
@@ -113,6 +110,51 @@ bool USkillComponent::UseSkill(FName SkillID, float CurrentQi, float& OutQiCost,
 
     OnSkillUsed.Broadcast(SkillID);
     return true;
+}
+
+FDamageResult USkillComponent::ApplySkillDamageToTarget(FName SkillID, AActor* TargetActor, float BaseDamage)
+{
+    FDamageResult Result;
+
+    if (!TargetActor)
+    {
+        return Result;
+    }
+
+    AActor* OwnerActor = GetOwner();
+    if (!OwnerActor)
+    {
+        return Result;
+    }
+
+    FActiveSkillData* SkillData = KnownSkills.Find(SkillID);
+    if (!SkillData)
+    {
+        return Result;
+    }
+
+    FDamageSpec Spec;
+    Spec.Source = OwnerActor;
+    Spec.Target = TargetActor;
+    Spec.SkillID = SkillID;
+    Spec.BaseAmount = FMath::Max(0.f, BaseDamage);
+
+    const EElementType Element = SkillData->Definition.ElementType;
+    Spec.Element = Element;
+    Spec.School = (Element == EElementType::None) ? EDamageSchool::Physical : EDamageSchool::Elemental;
+
+    Spec.bCanCrit = true;
+    Spec.bCanDodge = true;
+
+    if (UWorld* World = GetWorld())
+    {
+        if (UDamageResolverSubsystem* Resolver = World->GetSubsystem<UDamageResolverSubsystem>())
+        {
+            Result = Resolver->ResolveAndApplyDamage(Spec);
+        }
+    }
+
+    return Result;
 }
 
 void USkillComponent::AddSkillXP(FName SkillID, float Amount, ECultivationStage PlayerRealm)
