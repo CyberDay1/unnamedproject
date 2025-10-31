@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:16
+    container_name: wuxia_pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: wuxia
+      POSTGRES_PASSWORD: wuxia_pw
+      POSTGRES_DB: wuxia_db
+    ports: ["5432:5432"]
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+  redis:
+    image: redis:7
+    container_name: wuxia_redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    ports: ["6379:6379"]
+    volumes:
+      - redis_data:/data
+volumes:
+  pg_data:
+  redis_data:

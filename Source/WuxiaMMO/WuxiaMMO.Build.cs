@@ -31,6 +31,9 @@ public class WuxiaMMO : ModuleRules
                 Path.Combine(ModuleDirectory, "Systems")
             });
 
-        PrivateDependencyModuleNames.AddRange(new string[] { });
+        PrivateDependencyModuleNames.AddRange(new string[]
+        {
+            "Projects"
+        });
     }
 }
