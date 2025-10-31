@@ -2,8 +2,10 @@
 
 #include "Components/PrimitiveComponent.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/GameInstance.h"
 #include "TimerManager.h"
 #include "Engine/World.h"
+#include "Loot/LootSubsystem.h"
 
 void UHealthComponent::ApplyDamage(float Amount, AActor* InstigatorActor)
 {
@@ -45,7 +47,24 @@ void UHealthComponent::HandleDeath(AActor* Killer)
 
     OnDeath.Broadcast(Killer);
 
-    if (AActor* Owner = GetOwner())
+    AActor* Owner = GetOwner();
+
+    if (Owner && Owner->HasAuthority())
+    {
+        if (UWorld* World = GetWorld())
+        {
+            if (UGameInstance* GameInstance = World->GetGameInstance())
+            {
+                if (ULootSubsystem* LootSubsystem = GameInstance->GetSubsystem<ULootSubsystem>())
+                {
+                    const int32 KillerLuck = LootSubsystem->GetLuckStatForActor(Killer);
+                    LootSubsystem->HandleDeathLoot(Owner, Killer, NAME_None, KillerLuck);
+                }
+            }
+        }
+    }
+
+    if (Owner)
     {
         Owner->SetActorEnableCollision(false);
 
