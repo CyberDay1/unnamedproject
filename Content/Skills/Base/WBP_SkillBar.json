@@ -1,0 +1,14 @@
+{
+  "WidgetBlueprint": "WBP_SkillBar",
+  "Description": "Placeholder description of a skill bar widget. Bind buttons to TriggerSkillByIndex and display cooldown text using GetCooldownForSkill.",
+  "Bindings": {
+    "Initialize": "Call InitializeSkillBar with the player's SkillRuntimeComponent",
+    "Button1": "TriggerSkillByIndex(0)",
+    "Button2": "TriggerSkillByIndex(1)",
+    "Button3": "TriggerSkillByIndex(2)",
+    "Button4": "TriggerSkillByIndex(3)",
+    "Button5": "TriggerSkillByIndex(4)",
+    "Button6": "TriggerSkillByIndex(5)",
+    "CooldownText": "Format GetCooldownForSkill(SkillID)"
+  }
+}

@@ -1,0 +1,1272 @@
+{
+  "BaseAsset": "/Game/Skills/Base/BP_BaseSkill",
+  "PlaceholderEffects": {
+    "Cast": "/Game/VFX/Skills/NS_CastGlow",
+    "Impact": "/Game/VFX/Skills/NS_ImpactBurst",
+    "Trail": "/Game/VFX/Skills/NS_Trail",
+    "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+    "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+  },
+  "Assets": [
+    {
+      "SkillID": "QiSlash",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_QiSlash",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "CrescentWave",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_CrescentWave",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "BladeStorm",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_BladeStorm",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ResonantCut",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_ResonantCut",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SwordRain",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_SwordRain",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SeveringLine",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_SeveringLine",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "FlowGuard",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_FlowGuard",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "QiReflection",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_QiReflection",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "CalmEdge",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_CalmEdge",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "FlashStep",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_FlashStep",
+      "CastEffect": "/Game/VFX/Skills/NS_Trail",
+      "ImpactEffect": "",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "HeavenSplittingSlash",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_HeavenSplittingSlash",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SwordDomain",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_SwordDomain",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "BladeMastery",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_BladeMastery",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "KeenEdge",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_KeenEdge",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "BalancedFootwork",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_BalancedFootwork",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ResoluteSpirit",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_ResoluteSpirit",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "BladeWhisper",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_BladeWhisper",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ParryInstinct",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_ParryInstinct",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "CalmMind",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_CalmMind",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "QiResonance",
+      "Class": "SwordMaster",
+      "AssetPath": "/Game/Skills/SwordMaster/DA_QiResonance",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "Backstab",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_Backstab",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SilentFlurry",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_SilentFlurry",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "VenomBlade",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_VenomBlade",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "MirageBlades",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_MirageBlades",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "KillingIntent",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_KillingIntent",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ShadowTear",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_ShadowTear",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SmokeVeil",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_SmokeVeil",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "EvasionInstinct",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_EvasionInstinct",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ShadowClone",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_ShadowClone",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "GhostStep",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_GhostStep",
+      "CastEffect": "/Game/VFX/Skills/NS_Trail",
+      "ImpactEffect": "",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ThousandCuts",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_ThousandCuts",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "VeilOfDeath",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_VeilOfDeath",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ShadowAffinity",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_ShadowAffinity",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "VenomousStrike",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_VenomousStrike",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "Nightstalker",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_Nightstalker",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "SubtleFootsteps",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_SubtleFootsteps",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "AmbushMaster",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_AmbushMaster",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "CriticalEdge",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_CriticalEdge",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "SilentResolve",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_SilentResolve",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ShadowSynergy",
+      "Class": "Assassin",
+      "AssetPath": "/Game/Skills/Assassin/DA_ShadowSynergy",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "PurificationWave",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_PurificationWave",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "RadiantLance",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_RadiantLance",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SpiritThorns",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_SpiritThorns",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "Smite",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_Smite",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "QiBloom",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_QiBloom",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "JudgingLight",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_JudgingLight",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "LifeWard",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_LifeWard",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "Purge",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_Purge",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "QiBarrier",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_QiBarrier",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "RadiantStep",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_RadiantStep",
+      "CastEffect": "/Game/VFX/Skills/NS_Trail",
+      "ImpactEffect": "",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "HeavensBlessing",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_HeavensBlessing",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SpiritDescent",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_SpiritDescent",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SacredFocus",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_SacredFocus",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "HealingChant",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_HealingChant",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "DivineShield",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_DivineShield",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "RadiantGrace",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_RadiantGrace",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "QiHarmony",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_QiHarmony",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "SanctifiedGround",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_SanctifiedGround",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "GuardianSpirit",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_GuardianSpirit",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "BlessedResolve",
+      "Class": "Cleric",
+      "AssetPath": "/Game/Skills/Cleric/DA_BlessedResolve",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "FireLotus",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_FireLotus",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "StoneShard",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_StoneShard",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "AzureWave",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_AzureWave",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "TempestQi",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_TempestQi",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ArcanePulse",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_ArcanePulse",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "FrostSpikes",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_FrostSpikes",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ElementalShield",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_ElementalShield",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ArcaneWard",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_ArcaneWard",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "QiFocus",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_QiFocus",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "Blink",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_Blink",
+      "CastEffect": "/Game/VFX/Skills/NS_Trail",
+      "ImpactEffect": "",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ElementalCataclysm",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_ElementalCataclysm",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "MeteorStorm",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_MeteorStorm",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ArcaneMastery",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_ArcaneMastery",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ElementalAffinity",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_ElementalAffinity",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ManaFlow",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_ManaFlow",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "MysticInsight",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_MysticInsight",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "WeaveControl",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_WeaveControl",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "FrozenMind",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_FrozenMind",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "FlameResonance",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_FlameResonance",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "StormAegis",
+      "Class": "Mage",
+      "AssetPath": "/Game/Skills/Mage/DA_StormAegis",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "PalmStrike",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_PalmStrike",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "IronFist",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_IronFist",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ShockwaveKick",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_ShockwaveKick",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SpiritPulse",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_SpiritPulse",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "ResonantChant",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_ResonantChant",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "QiBurst",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_QiBurst",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "InnerTranquility",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_InnerTranquility",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "IronBody",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_IronBody",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "MeditationAura",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_MeditationAura",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "WindStep",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_WindStep",
+      "CastEffect": "/Game/VFX/Skills/NS_Trail",
+      "ImpactEffect": "",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "GoldenBody",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_GoldenBody",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "HeavenlyPalm",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_HeavenlyPalm",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "InnerStrength",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_InnerStrength",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "CalmBreath",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_CalmBreath",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "IronWill",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_IronWill",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "SereneMind",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_SereneMind",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "HarmonyFlow",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_HarmonyFlow",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "QiDiscipline",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_QiDiscipline",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "SpiritBalance",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_SpiritBalance",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "EnlightenedStride",
+      "Class": "Monk",
+      "AssetPath": "/Game/Skills/Monk/DA_EnlightenedStride",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "TrickStrike",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_TrickStrike",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "FortuneEdge",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_FortuneEdge",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "FlurryOfBlades",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_FlurryOfBlades",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "MirageSpin",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_MirageSpin",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "GambleQi",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_GambleQi",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "OpportunistCut",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_OpportunistCut",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "EvasiveRoll",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_EvasiveRoll",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "FortuneBarrier",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_FortuneBarrier",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "QuickHands",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_QuickHands",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "Dash",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_Dash",
+      "CastEffect": "/Game/VFX/Skills/NS_Trail",
+      "ImpactEffect": "",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "LucksGambit",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_LucksGambit",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "FortuneUnbound",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_FortuneUnbound",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "LuckyFootsteps",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_LuckyFootsteps",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ImprovisedGuard",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_ImprovisedGuard",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "QuickThinking",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_QuickThinking",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "StreetSmarts",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_StreetSmarts",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "RiskAndReward",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_RiskAndReward",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "FortunateStrike",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_FortunateStrike",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "AdaptableForm",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_AdaptableForm",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "WanderingSoul",
+      "Class": "Wanderer",
+      "AssetPath": "/Game/Skills/Wanderer/DA_WanderingSoul",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "ClawFrenzy",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_ClawFrenzy",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "HowlingStrike",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_HowlingStrike",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "QiRoar",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_QiRoar",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "BeastMerge",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_BeastMerge",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SummonCub",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_SummonCub",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "SpiritBite",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_SpiritBite",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "HideOfStone",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_HideOfStone",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "RejuvenateBeast",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_RejuvenateBeast",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "BondOfBlood",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_BondOfBlood",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "Pounce",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_Pounce",
+      "CastEffect": "/Game/VFX/Skills/NS_Trail",
+      "ImpactEffect": "",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "PrimordialAscension",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_PrimordialAscension",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "WrathOfTheWilds",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_WrathOfTheWilds",
+      "CastEffect": "/Game/VFX/Skills/NS_CastGlow",
+      "ImpactEffect": "/Game/VFX/Skills/NS_ImpactBurst",
+      "CastSound": "/Game/SFX/Skills/SC_Cast_Cue",
+      "ImpactSound": "/Game/SFX/Skills/SC_Impact_Cue"
+    },
+    {
+      "SkillID": "PackBond",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_PackBond",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "SavageInstinct",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_SavageInstinct",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "WildResilience",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_WildResilience",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "BestialFury",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_BestialFury",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "PrimalSenses",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_PrimalSenses",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "AlphaPresence",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_AlphaPresence",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "SharedVitality",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_SharedVitality",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    },
+    {
+      "SkillID": "NaturalAdaptation",
+      "Class": "BeastCultivator",
+      "AssetPath": "/Game/Skills/BeastCultivator/DA_NaturalAdaptation",
+      "CastEffect": "",
+      "ImpactEffect": "",
+      "CastSound": "",
+      "ImpactSound": ""
+    }
+  ]
+}
