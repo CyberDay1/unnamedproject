@@ -4,6 +4,9 @@
 #include "Combat/StatInterfaces.h"
 #include "Buffs/BuffComponent.h"
 #include "Combat/HealthComponent.h"
+#include "AI/ThreatComponent.h"
+#include "GameplayTagContainer.h"
+#include "GameplayTagsManager.h"
 #include "Engine/World.h"
 #include "GameFramework/Actor.h"
 
@@ -12,6 +15,12 @@ namespace
 static FORCEINLINE float Clamp01(float Value)
 {
     return FMath::Clamp(Value, 0.f, 1.f);
+}
+
+static FGameplayTag GetTankRoleTag()
+{
+    static const FGameplayTag Tag = FGameplayTag::RequestGameplayTag(FName(TEXT("Role.Tank")), false);
+    return Tag;
 }
 }
 
@@ -232,6 +241,20 @@ FDamageResult UDamageResolverSubsystem::ResolveAndApplyDamage(const FDamageSpec&
     Damage *= CritMultiplier;
 
     Result.FinalAmount = FMath::Max(0.f, Damage);
+
+    if (Result.FinalAmount > 0.f)
+    {
+        if (UThreatComponent* Threat = Target->FindComponentByClass<UThreatComponent>())
+        {
+            bool bSourceIsTank = Source && Source->ActorHasTag(FName(TEXT("Tank")));
+            const FGameplayTag TankTag = GetTankRoleTag();
+            if (!bSourceIsTank && TankTag.IsValid())
+            {
+                bSourceIsTank = Spec.ContextTags.HasTagExact(TankTag);
+            }
+            Threat->AddDamageThreat(Source, Result.FinalAmount, bSourceIsTank);
+        }
+    }
 
     if (UHealthComponent* Health = Target->FindComponentByClass<UHealthComponent>())
     {

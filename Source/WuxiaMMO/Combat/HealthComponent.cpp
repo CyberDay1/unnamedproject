@@ -1,110 +1,74 @@
 #include "Combat/HealthComponent.h"
 
-#include "Components/PrimitiveComponent.h"
 #include "GameFramework/Actor.h"
-#include "GameFramework/GameInstance.h"
-#include "TimerManager.h"
-#include "Engine/World.h"
-#include "Loot/LootSubsystem.h"
+
+void UHealthComponent::RecalcMaxHP()
+{
+    const float MinorRealmScale = 2.0f * FMath::Max(0, MinorRealmLevel);
+    MaxHP = FMath::Max(1.f, BaseHP + ClassHPBonus + VitalityContribution + MinorRealmScale + ConstitutionMinorBonus);
+    if (CurrentHP > MaxHP)
+    {
+        CurrentHP = MaxHP;
+    }
+}
+
+void UHealthComponent::InitializeHP()
+{
+    RecalcMaxHP();
+    if (CurrentHP <= 0.f)
+    {
+        CurrentHP = MaxHP;
+    }
+    bIsDead = false;
+    OnHealthChanged.Broadcast(CurrentHP, MaxHP, nullptr);
+}
 
 void UHealthComponent::ApplyDamage(float Amount, AActor* InstigatorActor)
 {
-    if (bIsDead)
+    if (bIsDead || Amount <= 0.f)
     {
         return;
     }
 
-    const float ClampedAmount = FMath::Max(0.f, Amount);
-    HP = FMath::Clamp(HP - ClampedAmount, 0.f, MaxHP);
+    CurrentHP = FMath::Clamp(CurrentHP - Amount, 0.f, MaxHP);
+    OnHealthChanged.Broadcast(CurrentHP, MaxHP, InstigatorActor);
 
-    OnDamaged.Broadcast(InstigatorActor, ClampedAmount);
-
-    if (HP <= 0.f)
+    if (CurrentHP <= 0.f)
     {
-        HandleDeath(InstigatorActor);
+        bIsDead = true;
+        OnDeath.Broadcast(InstigatorActor);
     }
 }
 
-void UHealthComponent::Heal(float Amount)
+void UHealthComponent::Heal(float Amount, AActor* InstigatorActor)
+{
+    if (bIsDead || Amount <= 0.f)
+    {
+        return;
+    }
+
+    CurrentHP = FMath::Clamp(CurrentHP + Amount, 0.f, MaxHP);
+    OnHealthChanged.Broadcast(CurrentHP, MaxHP, InstigatorActor);
+}
+
+void UHealthComponent::ForceDeath(AActor* Killer)
 {
     if (bIsDead)
     {
         return;
     }
 
-    const float ClampedAmount = FMath::Max(0.f, Amount);
-    HP = FMath::Clamp(HP + ClampedAmount, 0.f, MaxHP);
-}
-
-void UHealthComponent::HandleDeath(AActor* Killer)
-{
-    if (bIsDead)
-    {
-        return;
-    }
-
+    CurrentHP = 0.f;
     bIsDead = true;
-
     OnDeath.Broadcast(Killer);
-
-    AActor* Owner = GetOwner();
-
-    if (Owner && Owner->HasAuthority())
-    {
-        if (UWorld* World = GetWorld())
-        {
-            if (UGameInstance* GameInstance = World->GetGameInstance())
-            {
-                if (ULootSubsystem* LootSubsystem = GameInstance->GetSubsystem<ULootSubsystem>())
-                {
-                    const int32 KillerLuck = LootSubsystem->GetLuckStatForActor(Killer);
-                    LootSubsystem->HandleDeathLoot(Owner, Killer, NAME_None, KillerLuck);
-                }
-            }
-        }
-    }
-
-    if (Owner)
-    {
-        Owner->SetActorEnableCollision(false);
-
-        TInlineComponentArray<UActorComponent*> Components;
-        Owner->GetComponents(Components);
-        for (UActorComponent* Component : Components)
-        {
-            if (UPrimitiveComponent* Primitive = Cast<UPrimitiveComponent>(Component))
-            {
-                Primitive->SetSimulatePhysics(false);
-            }
-        }
-    }
-
-    StartFadeAndDestroy();
 }
 
-void UHealthComponent::StartFadeAndDestroy()
+void UHealthComponent::RespawnAtLocation(const FVector& WorldLocation)
 {
-    UWorld* World = GetWorld();
-    if (!World)
+    if (AActor* Owner = GetOwner())
     {
-        return;
+        Owner->SetActorLocation(WorldLocation, false, nullptr, ETeleportType::TeleportPhysics);
+        bIsDead = false;
+        InitializeHP();
     }
-
-    FTimerHandle TimerHandle;
-    World->GetTimerManager().SetTimer(
-        TimerHandle,
-        [WeakThis = TWeakObjectPtr<UHealthComponent>(this)]()
-        {
-            if (!WeakThis.IsValid())
-            {
-                return;
-            }
-
-            if (AActor* Owner = WeakThis->GetOwner())
-            {
-                Owner->Destroy();
-            }
-        },
-        5.0f,
-        false);
 }
