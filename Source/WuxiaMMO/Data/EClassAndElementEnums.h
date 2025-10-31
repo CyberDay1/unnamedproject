@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Combat/DamageTypes.h"
 #include "EClassAndElementEnums.generated.h"
 
 UENUM(BlueprintType)
@@ -13,13 +14,3 @@ enum class EClassType : uint8
     Rogue       UMETA(DisplayName = "Rogue")
 };
 
-UENUM(BlueprintType)
-enum class EElementType : uint8
-{
-    None    UMETA(DisplayName = "None"),
-    Wood    UMETA(DisplayName = "Wood"),
-    Fire    UMETA(DisplayName = "Fire"),
-    Earth   UMETA(DisplayName = "Earth"),
-    Metal   UMETA(DisplayName = "Metal"),
-    Water   UMETA(DisplayName = "Water")
-};

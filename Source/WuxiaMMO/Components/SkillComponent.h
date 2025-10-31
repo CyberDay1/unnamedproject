@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Combat/DamageTypes.h"
 #include "Components/ActorComponent.h"
 #include "Data/FSkillDefinition.h"
 #include "Data/FClassBalanceData.h"
@@ -49,6 +50,9 @@ public:
 
     UFUNCTION(BlueprintCallable, Category="Skills")
     bool UseSkill(FName SkillID, float CurrentQi, float& OutQiCost, float& OutDamage);
+
+    UFUNCTION(BlueprintCallable, Category="Skills|Combat")
+    FDamageResult ApplySkillDamageToTarget(FName SkillID, AActor* TargetActor, float BaseDamage);
 
     UFUNCTION(BlueprintCallable, Category="Skills")
     void AddSkillXP(FName SkillID, float Amount, ECultivationStage PlayerRealm);

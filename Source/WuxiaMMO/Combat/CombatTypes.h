@@ -1,18 +1,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Combat/DamageTypes.h"
 #include "CombatTypes.generated.h"
-
-UENUM(BlueprintType)
-enum class EElementType : uint8
-{
-    None,
-    Metal,
-    Wood,
-    Water,
-    Fire,
-    Earth
-};
 
 USTRUCT(BlueprintType)
 struct FSkillRow
