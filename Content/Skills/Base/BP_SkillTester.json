@@ -1,0 +1,13 @@
+{
+  "Blueprint": "BP_SkillTester",
+  "ParentClass": "/Script/WuxiaMMO.SkillTesterPawn",
+  "AutoLearnSkillIDs": [
+    "QiSlash",
+    "CrescentWave",
+    "FlowGuard",
+    "FlashStep",
+    "HeavenSplittingSlash",
+    "SwordDomain"
+  ],
+  "Notes": "Place this pawn in PIE to test the runtime skill component. Keys 1-6 call UseSkillByID for configured skills."
+}

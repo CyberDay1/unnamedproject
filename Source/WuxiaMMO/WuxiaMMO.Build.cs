@@ -16,6 +16,7 @@ public class WuxiaMMO : ModuleRules
                 "HTTP", "Json", "JsonUtilities",
                 "UMG", "Slate", "SlateCore",
                 "Niagara",
+                "AudioMixer",
                 "Perception",
                 "NavigationSystem",
                 "AIModule",
