@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Subsystems/WorldSubsystem.h"
+#include "Server/SyncJobTypes.h"
 #include "PersistenceManagerSubsystem.generated.h"
 
 USTRUCT(BlueprintType)
@@ -36,6 +37,10 @@ public:
     UFUNCTION(BlueprintCallable, Category="DB") bool CreateCharacter(const FCharacterDTO& In, FString& OutCharacterId);
     UFUNCTION(BlueprintCallable, Category="DB") bool IsAccountBanned(const FString& AccountId, bool& bOutBanned);
     UFUNCTION(BlueprintCallable, Category="DB") bool LogAudit(const FString& ActorAccountId, const FString& Action, const FString& PayloadJson);
+
+    UFUNCTION(BlueprintCallable, Category="DB") bool UpsertPlayerBatch(const TArray<FSyncJob>& Jobs);
+    UFUNCTION(BlueprintCallable, Category="DB") bool UpsertWorldBatch(const TArray<FSyncJob>& Jobs);
+    UFUNCTION(BlueprintCallable, Category="DB") bool UpsertServerBatch(const TArray<FSyncJob>& Jobs);
 
 private:
     FString ConnHost, ConnDb, ConnUser, ConnPass; int32 ConnPort=5432;
