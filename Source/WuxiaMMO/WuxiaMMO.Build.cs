@@ -18,7 +18,8 @@ public class WuxiaMMO : ModuleRules
                 "Niagara",
                 "Perception",
                 "NavigationSystem",
-                "AIModule"
+                "AIModule",
+                "NetCore", "OnlineSubsystem"
             });
 
         PublicIncludePaths.AddRange(
