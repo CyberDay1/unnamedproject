@@ -15,6 +15,7 @@ public class WuxiaMMO : ModuleRules
                 "GameplayAbilities", "GameplayTags", "GameplayTasks",
                 "HTTP", "Json", "JsonUtilities",
                 "UMG", "Slate", "SlateCore",
+                "Niagara",
                 "Perception",
                 "NavigationSystem",
                 "AIModule"
