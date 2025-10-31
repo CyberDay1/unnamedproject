@@ -61,6 +61,7 @@
 *.log
 *.ldf
 *.sql
+!infra/sql/*.sql
 *.orig
 
 # Crash dumps
