@@ -1,6 +1,7 @@
 #include "Server/PersistenceManagerSubsystem.h"
 #include "Misc/ConfigCacheIni.h"
 #include "Misc/ScopeLock.h"
+#include "Server/SyncJobTypes.h"
 
 bool UPersistenceManagerSubsystem::InitFromConfig()
 {
@@ -44,4 +45,20 @@ bool UPersistenceManagerSubsystem::LogAudit(const FString& ActorAccountId, const
 {
     // INSERT INTO audit_log (actor_account, action, payload) VALUES ($1,$2,$3);
     return true;
+}
+
+bool UPersistenceManagerSubsystem::UpsertPlayerBatch(const TArray<FSyncJob>& Jobs)
+{
+    // TODO: Replace with actual DB client once available.
+    return Jobs.Num() >= 0;
+}
+
+bool UPersistenceManagerSubsystem::UpsertWorldBatch(const TArray<FSyncJob>& Jobs)
+{
+    return Jobs.Num() >= 0;
+}
+
+bool UPersistenceManagerSubsystem::UpsertServerBatch(const TArray<FSyncJob>& Jobs)
+{
+    return Jobs.Num() >= 0;
 }
