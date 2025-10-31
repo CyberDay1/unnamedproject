@@ -158,6 +158,17 @@ struct FSkillDefinition : public FTableRowBase
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     float DamageReducePercent = 0.f; // e.g., 0.2 = 20% DR
+
+    // Combo chaining
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FName ComboFrom = NAME_None;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FName ComboTo = NAME_None;
+
+    // Input method eligibility
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool bKeyComboEnabled = true;
 };
 
 USTRUCT(BlueprintType)

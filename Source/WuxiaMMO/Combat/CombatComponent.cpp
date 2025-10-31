@@ -3,6 +3,7 @@
 #include "Combat/DamageCalculation.h"
 #include "Combat/HealthComponent.h"
 #include "Components/CultivationComponent.h"
+#include "Buffs/BuffComponent.h"
 #include "Environment/WeatherSubsystem.h"
 #include "Engine/EngineTypes.h"
 #include "Engine/World.h"
@@ -49,12 +50,22 @@ bool UCombatComponent::PerformBasicAttack(AActor* PreferredTarget)
     TempSkill.Range = BasicRange;
     TempSkill.Radius = BasicRadius;
 
-    const float Damage = UDamageCalculation::ComputeDamage(
+    float Damage = UDamageCalculation::ComputeDamage(
         TempSkill,
         GetAttackerScalingStat(),
         GetElementAffinityBonus(TempSkill.Element),
         ComputeGlobalAttackMultiplier(!GetOwner()->IsPlayerControlled()),
         GetTargetDefense(Target));
+
+    if (UBuffComponent* AttackerBuffs = GetOwner()->FindComponentByClass<UBuffComponent>())
+    {
+        Damage *= AttackerBuffs->GetDamageMultiplier();
+    }
+
+    if (UBuffComponent* TargetBuffs = Target->FindComponentByClass<UBuffComponent>())
+    {
+        Damage *= TargetBuffs->GetDefenseMultiplier();
+    }
 
     if (UHealthComponent* Health = Target->FindComponentByClass<UHealthComponent>())
     {
@@ -99,12 +110,22 @@ bool UCombatComponent::PerformSkillByID(FName SkillID, AActor* PreferredTarget)
         return false;
     }
 
-    const float Damage = UDamageCalculation::ComputeDamage(
+    float Damage = UDamageCalculation::ComputeDamage(
         SkillRow,
         GetAttackerScalingStat(),
         GetElementAffinityBonus(SkillRow.Element),
         ComputeGlobalAttackMultiplier(!GetOwner()->IsPlayerControlled()),
         GetTargetDefense(Target));
+
+    if (UBuffComponent* AttackerBuffs = GetOwner()->FindComponentByClass<UBuffComponent>())
+    {
+        Damage *= AttackerBuffs->GetDamageMultiplier();
+    }
+
+    if (UBuffComponent* TargetBuffs = Target->FindComponentByClass<UBuffComponent>())
+    {
+        Damage *= TargetBuffs->GetDefenseMultiplier();
+    }
 
     if (UHealthComponent* Health = Target->FindComponentByClass<UHealthComponent>())
     {

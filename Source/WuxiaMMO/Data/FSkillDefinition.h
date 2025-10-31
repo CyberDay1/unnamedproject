@@ -39,4 +39,15 @@ struct FSkillDefinition
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill")
     float BaseSkillXP = 100.0f;
+
+    // Combo chaining
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill|Combo")
+    FName ComboFrom = NAME_None;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill|Combo")
+    FName ComboTo = NAME_None;
+
+    // Input method eligibility
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skill|Combo")
+    bool bKeyComboEnabled = true;
 };

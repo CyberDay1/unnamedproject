@@ -56,6 +56,12 @@ public:
     UFUNCTION(BlueprintPure)
     float GetCooldownRemaining(FName SkillID) const;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+    bool bLastInputWasKeyCombo = false;
+
+    UFUNCTION(BlueprintCallable, Category="Input")
+    void RegisterInputSource(bool bIsKeyCombo);
+
 private:
     bool GetDef(FName SkillID, FSkillDefinition& Out) const;
     bool PassesUnlocks(const FSkillDefinition& Def) const;

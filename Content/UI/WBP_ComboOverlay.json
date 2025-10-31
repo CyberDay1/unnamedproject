@@ -1,0 +1,43 @@
+{
+  "WidgetBlueprint": "WBP_ComboOverlay",
+  "Description": "Debug overlay that mirrors combo component state for designers",
+  "RootCanvas": {
+    "Type": "CanvasPanel",
+    "Children": [
+      {
+        "Type": "TextBlock",
+        "Name": "CurrentSkillText",
+        "Anchors": "TopLeft",
+        "Position": [20, 20],
+        "Text": "Current Skill: --"
+      },
+      {
+        "Type": "TextBlock",
+        "Name": "NextExpectedText",
+        "Anchors": "TopLeft",
+        "Position": [20, 60],
+        "Text": "Next Skill: --"
+      },
+      {
+        "Type": "ProgressBar",
+        "Name": "TimeRemainingBar",
+        "Anchors": "TopLeft",
+        "Position": [20, 100],
+        "Size": [260, 18],
+        "Percent": 0.0
+      },
+      {
+        "Type": "TextBlock",
+        "Name": "ComboCountText",
+        "Anchors": "TopLeft",
+        "Position": [20, 132],
+        "Text": "Combo Count: 0"
+      }
+    ]
+  },
+  "Bindings": {
+    "OnComboProgress": "Update texts and progress bar using ComboWindow for normalization",
+    "OnComboSuccess": "Flash ComboCountText green and increment count",
+    "OnComboReset": "Clear texts and reset progress"
+  }
+}

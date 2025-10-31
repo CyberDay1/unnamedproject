@@ -1,0 +1,55 @@
+{
+  "Type": "DataTable",
+  "Name": "DT_Buffs",
+  "StructType": "FBuffDefinition",
+  "Rows": {
+    "ComboFlow": {
+      "BuffID": "ComboFlow",
+      "BuffTag": "Buff.ComboFlow",
+      "DurationSeconds": 5.0,
+      "MaxStacks": 1,
+      "Application": "Add",
+      "DamageMultiplier": 1.1,
+      "QiCostMultiplier": 1.0,
+      "DefenseMultiplier": 1.0,
+      "MoveSpeedMultiplier": 1.0,
+      "bBlocksCasting": false
+    },
+    "QiFocus": {
+      "BuffID": "QiFocus",
+      "BuffTag": "Buff.QiFocus",
+      "DurationSeconds": 5.0,
+      "MaxStacks": 1,
+      "Application": "Add",
+      "DamageMultiplier": 1.0,
+      "QiCostMultiplier": 0.9,
+      "DefenseMultiplier": 1.0,
+      "MoveSpeedMultiplier": 1.0,
+      "bBlocksCasting": false
+    },
+    "Weakened": {
+      "BuffID": "Weakened",
+      "BuffTag": "Debuff.Weakened",
+      "DurationSeconds": 6.0,
+      "MaxStacks": 3,
+      "Application": "Add",
+      "DamageMultiplier": 1.0,
+      "QiCostMultiplier": 1.0,
+      "DefenseMultiplier": 1.1,
+      "MoveSpeedMultiplier": 1.0,
+      "bBlocksCasting": false
+    },
+    "Stunned": {
+      "BuffID": "Stunned",
+      "BuffTag": "Debuff.Stunned",
+      "DurationSeconds": 2.0,
+      "MaxStacks": 1,
+      "Application": "MaxOverride",
+      "DamageMultiplier": 1.0,
+      "QiCostMultiplier": 1.0,
+      "DefenseMultiplier": 1.0,
+      "MoveSpeedMultiplier": 1.0,
+      "bBlocksCasting": true
+    }
+  }
+}
