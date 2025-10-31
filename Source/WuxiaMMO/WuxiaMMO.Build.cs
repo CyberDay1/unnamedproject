@@ -14,7 +14,10 @@ public class WuxiaMMO : ModuleRules
                 "EnhancedInput",
                 "GameplayAbilities", "GameplayTags", "GameplayTasks",
                 "HTTP", "Json", "JsonUtilities",
-                "UMG", "Slate", "SlateCore"
+                "UMG", "Slate", "SlateCore",
+                "Perception",
+                "NavigationSystem",
+                "AIModule"
             });
 
         PublicIncludePaths.AddRange(
