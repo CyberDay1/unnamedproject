@@ -41,6 +41,12 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Skills")
     TArray<FClassBalanceData> ClassBalanceTable;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Input")
+    bool bLastInputWasKeyCombo = false;
+
+    UFUNCTION(BlueprintCallable, Category="Input")
+    void RegisterInputSource(bool bIsKeyCombo) { bLastInputWasKeyCombo = bIsKeyCombo; }
+
     UFUNCTION(BlueprintCallable, Category="Skills")
     bool UseSkill(FName SkillID, float CurrentQi, float& OutQiCost, float& OutDamage);
 
@@ -57,7 +63,7 @@ public:
     FOnSkillLevelUp OnSkillLevelUp;
 
 private:
-    bool CanUseSkill(const FActiveSkillData& Skill, float CurrentQi) const;
+    bool CanUseSkill(const FActiveSkillData& Skill, float CurrentQi, float ActualQiCost) const;
     void ApplyCooldown(FActiveSkillData& Skill);
     float CalculateDamage(const FSkillDefinition& Skill, const FClassBalanceData& ClassData, const TMap<FString, float>& Stats) const;
 };

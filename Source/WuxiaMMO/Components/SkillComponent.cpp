@@ -1,4 +1,7 @@
 #include "Components/SkillComponent.h"
+
+#include "Buffs/BuffComponent.h"
+#include "Components/ComboComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
 USkillComponent::USkillComponent()
@@ -6,9 +9,9 @@ USkillComponent::USkillComponent()
     PrimaryComponentTick.bCanEverTick = false;
 }
 
-bool USkillComponent::CanUseSkill(const FActiveSkillData& Skill, float CurrentQi) const
+bool USkillComponent::CanUseSkill(const FActiveSkillData& Skill, float CurrentQi, float ActualQiCost) const
 {
-    return (Skill.CooldownRemaining <= 0.0f) && (CurrentQi >= Skill.Definition.QiCost);
+    return (Skill.CooldownRemaining <= 0.0f) && (CurrentQi >= ActualQiCost);
 }
 
 void USkillComponent::ApplyCooldown(FActiveSkillData& Skill)
@@ -38,12 +41,31 @@ bool USkillComponent::UseSkill(FName SkillID, float CurrentQi, float& OutQiCost,
     }
 
     FActiveSkillData& Skill = KnownSkills[SkillID];
-    if (!CanUseSkill(Skill, CurrentQi))
+    const FClassBalanceData ClassData = (ClassBalanceTable.Num() > 0) ? ClassBalanceTable[0] : FClassBalanceData();
+
+    UBuffComponent* BuffComponent = GetOwner() ? GetOwner()->FindComponentByClass<UBuffComponent>() : nullptr;
+    if (BuffComponent && BuffComponent->IsCastingBlocked())
     {
         return false;
     }
 
-    const FClassBalanceData ClassData = (ClassBalanceTable.Num() > 0) ? ClassBalanceTable[0] : FClassBalanceData();
+    float QiCostMultiplier = ClassData.QiEfficiency;
+    if (bLastInputWasKeyCombo && Skill.Definition.bKeyComboEnabled)
+    {
+        QiCostMultiplier *= 0.9f;
+    }
+
+    if (BuffComponent)
+    {
+        QiCostMultiplier *= BuffComponent->GetQiCostMultiplier();
+    }
+
+    OutQiCost = Skill.Definition.QiCost * QiCostMultiplier;
+
+    if (!CanUseSkill(Skill, CurrentQi, OutQiCost))
+    {
+        return false;
+    }
 
     TMap<FString, float> Stats;
     Stats.Add("Agility", 5.0f);
@@ -52,10 +74,43 @@ bool USkillComponent::UseSkill(FName SkillID, float CurrentQi, float& OutQiCost,
     Stats.Add("Spirit", 5.0f);
     Stats.Add("Willpower", 5.0f);
 
-    OutQiCost = Skill.Definition.QiCost * ClassData.QiEfficiency;
     OutDamage = CalculateDamage(Skill.Definition, ClassData, Stats);
 
+    if (BuffComponent)
+    {
+        OutDamage *= BuffComponent->GetDamageMultiplier();
+    }
+
     ApplyCooldown(Skill);
+
+    if (AActor* OwnerActor = GetOwner())
+    {
+        if (UComboComponent* ComboComponent = OwnerActor->FindComponentByClass<UComboComponent>())
+        {
+            if (ComboComponent->IsInCombo())
+            {
+                if (ComboComponent->GetExpectedNext() == SkillID)
+                {
+                    ComboComponent->TryContinueCombo(SkillID, Skill.Definition.ComboTo);
+                }
+                else
+                {
+                    ComboComponent->BreakCombo();
+                    if (Skill.Definition.ComboFrom.IsNone())
+                    {
+                        ComboComponent->StartCombo(SkillID, Skill.Definition.ComboTo);
+                    }
+                }
+            }
+            else if (Skill.Definition.ComboFrom.IsNone())
+            {
+                ComboComponent->StartCombo(SkillID, Skill.Definition.ComboTo);
+            }
+        }
+    }
+
+    bLastInputWasKeyCombo = false;
+
     OnSkillUsed.Broadcast(SkillID);
     return true;
 }
