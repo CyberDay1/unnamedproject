@@ -1,0 +1,17 @@
+{
+  "ActorBlueprint": "BP_ComboTester",
+  "Components": [
+    "SkillRuntimeComponent",
+    "ComboComponent",
+    "SkillMasteryComponent",
+    "BuffComponent"
+  ],
+  "Variables": {
+    "DemoSkills": ["QiSlash", "CrescentWave", "BladeStorm"]
+  },
+  "BeginPlay": [
+    "For each DemoSkills -> LearnSkill",
+    "Create and add WBP_ComboOverlay to viewport if player controlled",
+    "Set repeating timer (0.7s) to register key combo input and cycle UseSkillByID"
+  ]
+}

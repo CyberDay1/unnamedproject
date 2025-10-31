@@ -1,6 +1,8 @@
 #include "Skills/SkillRuntimeComponent.h"
 #include "Skills/SkillRegistrySubsystem.h"
 #include "Skills/SkillMasteryComponent.h"
+#include "Skills/ComboComponent.h"
+#include "Buffs/BuffComponent.h"
 #include "Combat/CombatComponent.h"
 #include "Combat/DamageCalculation.h"
 #include "Components/CultivationComponent.h"
@@ -98,12 +100,24 @@ bool USkillRuntimeComponent::SpendQi(const FSkillDefinition& Def)
         return true;
     }
 
+    float CostFraction = Def.QiCostFraction;
+
+    if (bLastInputWasKeyCombo && Def.bKeyComboEnabled)
+    {
+        CostFraction *= 0.9f;
+    }
+
     if (AActor* OwnerActor = GetOwner())
     {
+        if (UBuffComponent* Buffs = OwnerActor->FindComponentByClass<UBuffComponent>())
+        {
+            CostFraction *= Buffs->GetQiCostMultiplier();
+        }
+
         if (UCultivationComponent* Cultivation = OwnerActor->FindComponentByClass<UCultivationComponent>())
         {
             const float MaxQi = FMath::Max(Cultivation->Progress.RequiredQi, 1.f);
-            const float QiCost = MaxQi * Def.QiCostFraction;
+            const float QiCost = MaxQi * CostFraction;
 
             if (Cultivation->Progress.CurrentQi < QiCost)
             {
@@ -114,7 +128,14 @@ bool USkillRuntimeComponent::SpendQi(const FSkillDefinition& Def)
         }
     }
 
+    bLastInputWasKeyCombo = false;
+
     return true;
+}
+
+void USkillRuntimeComponent::RegisterInputSource(bool bIsKeyCombo)
+{
+    bLastInputWasKeyCombo = bIsKeyCombo;
 }
 
 bool USkillRuntimeComponent::LearnSkill(FName SkillID)
@@ -180,19 +201,27 @@ bool USkillRuntimeComponent::UseSkillByID(FName SkillID)
         return false;
     }
 
+    AActor* OwnerActor = GetOwner();
+    UBuffComponent* Buffs = OwnerActor ? OwnerActor->FindComponentByClass<UBuffComponent>() : nullptr;
+
+    if (Buffs && Buffs->IsCastingBlocked())
+    {
+        return false;
+    }
+
     if (!SpendQi(Definition))
     {
         return false;
     }
 
-    OnSkillCast.Broadcast(SkillID, GetOwner(), Definition);
+    OnSkillCast.Broadcast(SkillID, OwnerActor, Definition);
 
-    USkillMasteryComponent* MasteryComponent = GetOwner() ? GetOwner()->FindComponentByClass<USkillMasteryComponent>() : nullptr;
+    USkillMasteryComponent* MasteryComponent = OwnerActor ? OwnerActor->FindComponentByClass<USkillMasteryComponent>() : nullptr;
     const float CooldownMultiplier = MasteryComponent ? MasteryComponent->GetCooldownMultiplier(SkillID, Definition) : 1.f;
 
     if (Definition.Kind != ESkillKind::Passive)
     {
-        if (UCombatComponent* Combat = GetOwner() ? GetOwner()->FindComponentByClass<UCombatComponent>() : nullptr)
+        if (UCombatComponent* Combat = OwnerActor ? OwnerActor->FindComponentByClass<UCombatComponent>() : nullptr)
         {
             bool bAnyHit = false;
 
@@ -213,7 +242,17 @@ bool USkillRuntimeComponent::UseSkillByID(FName SkillID)
 
             if (bAnyHit)
             {
-                // Placeholder for additional combo hooks.
+                if (UComboComponent* Combo = OwnerActor ? OwnerActor->FindComponentByClass<UComboComponent>() : nullptr)
+                {
+                    if (Combo->IsInCombo())
+                    {
+                        Combo->TryContinueCombo(SkillID, Definition);
+                    }
+                    else if (Definition.ComboFrom == NAME_None)
+                    {
+                        Combo->StartCombo(SkillID, Definition);
+                    }
+                }
             }
         }
     }
