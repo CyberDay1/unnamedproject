@@ -1,7 +1,7 @@
 import os, time, json, uuid
 from datetime import datetime, timedelta, timezone
-from typing import Optional, List
-from fastapi import FastAPI, Depends, HTTPException, Header
+from typing import Optional
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, EmailStr
 import jwt
@@ -18,7 +18,6 @@ REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0")
 JWT_SECRET = os.getenv("ADMIN_JWT_SECRET", "dev_only_secret")
 JWT_TTL = int(os.getenv("ADMIN_JWT_TTL_SECONDS", "3600"))
 
-pool = psycopg.Connection.connect(DATABASE_URL)
 rds = redis.from_url(REDIS_URL, decode_responses=True)
 ph = PasswordHasher()
 auth_scheme = HTTPBearer()
