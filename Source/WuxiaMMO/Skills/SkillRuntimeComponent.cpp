@@ -1,7 +1,7 @@
 #include "Skills/SkillRuntimeComponent.h"
 #include "Skills/SkillRegistrySubsystem.h"
 #include "Skills/SkillMasteryComponent.h"
-#include "Skills/ComboComponent.h"
+#include "Components/ComboComponent.h"
 #include "Buffs/BuffComponent.h"
 #include "Combat/CombatComponent.h"
 #include "Combat/DamageCalculation.h"
@@ -246,11 +246,11 @@ bool USkillRuntimeComponent::UseSkillByID(FName SkillID)
                 {
                     if (Combo->IsInCombo())
                     {
-                        Combo->TryContinueCombo(SkillID, Definition);
+                        Combo->TryContinueCombo(SkillID, Definition.ComboTo);
                     }
                     else if (Definition.ComboFrom == NAME_None)
                     {
-                        Combo->StartCombo(SkillID, Definition);
+                        Combo->StartCombo(SkillID, Definition.ComboTo);
                     }
                 }
             }
